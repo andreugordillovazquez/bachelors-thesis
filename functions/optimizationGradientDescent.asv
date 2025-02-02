@@ -1,0 +1,76 @@
+function [rho_opt, E0_max] = optimizationGradientDescent(Q, pi_matrix, g_matrix, R, tol, rho_star)
+%OPTIMIZATIONGRADIENTASCENT Optimizes G(rho) = E0(rho) - rho*R using gradient ascent.
+%
+%   [rho_opt, E0_max] = optimizationGradientAscent(Q, pi_matrix, g_matrix, R, alpha, tol, max_iter, rho_star)
+%
+%   This function uses a basic gradient ascent method with a constant step size (alpha)
+%   to maximize the objective function
+%
+%       G(rho) = E0(rho) - rho * R,
+%
+%   where E0(rho) and its derivative are computed by the function 'derivativesE0'.
+%
+%   Inputs:
+%       Q         - Matrix or data structure required by derivativesE0.
+%       pi_matrix - Matrix of probabilities or related parameters for E0.
+%       g_matrix  - Matrix of gains or similar parameters for E0.
+%       R         - Scalar rate parameter.
+%       alpha     - Constant step size (learning rate) for the gradient ascent update.
+%       tol       - Tolerance for the stopping criterion based on |rho_new - rho|.
+%       max_iter  - Maximum number of iterations allowed.
+%       rho_star  - Initial guess for rho (should be within [0,1]).
+%
+%   Outputs:
+%       rho_opt   - The optimized value of rho (within [0,1]).
+%       E0_max    - The value of E0 evaluated at rho_opt.
+%
+
+    iter = 0;
+    log2_const = log(2);
+    max_iter = 100;       % Maximum iterations for the loop
+    rho = rho_star;  % current value of rho
+
+    while iter < max_iter
+        % 1) Evaluate E0 and its derivative at the current rho.
+        [F0, ~, dF0, ~, d2F0, ~] = derivativesE0(Q, pi_matrix, g_matrix, rho);
+
+        % 
+        % Optimize divisions by precomputing repeated values
+        f_inv = 1/F0;
+        fp_f = dF0 * f_inv;
+
+        % Compute gradient and curvature with minimized operations
+        gradient = (-fp_f / log2_const) - R;
+        curvature = -((d2F0 * f_inv) - (fp_f * fp_f)) / log2_const;
+
+        % 2) Compute the gradient of G(rho)= E0(rho)-R*rho.
+        %    E0'(rho) is given as: - (f'(rho)/(f(rho)*ln(2)))
+        f_inv = 1 / F0;
+        fp_f  = dF0 * f_inv;
+        gradG = -(fp_f / log2_const) - R;  % Gradient of G
+        curvatura = -(d2F0/F0 - (dF0/F))
+        
+
+        % 3) Update rho by moving along the gradient (gradient ascent).
+        rho_new = rho + alpha * gradG;
+
+        % 4) Check for convergence (if the change is small enough, stop).
+        if abs(rho_new - rho) < tol
+            rho = rho_new;
+            break;
+        end
+
+        % 5) Update rho and increment the iteration counter.
+        rho = rho_new;
+        iter = iter + 1;
+    end
+
+    % Final result: Evaluate E0 at the optimized rho.
+    rho_opt = rho;
+    [~, E0_opt, ~, ~, ~, ~] = derivativesE0(Q, pi_matrix, g_matrix, rho_opt);
+    E0_max = E0_opt;
+
+    fprintf('\nBasic Gradient Ascent finished after %d iterations.\n', iter);
+    fprintf('rho_opt = %.6f\n', rho_opt);
+    fprintf('E0_max = %.6f\n\n', E0_max);
+end
