@@ -1,4 +1,5 @@
-function [F0, E0, dF0, dE0, d2F0, d2E0] = derivativesE0(Q, pi_matrix, w_matrix, rho)
+function [F0, dF0, d2F0, times] = derivativesE0(Q, pi_matrix, w_matrix, rho)
+    tic;
     % Precompute constants
     s   = 1/(1+rho);
     sp  = -1/(1+rho)^2;
@@ -17,11 +18,16 @@ function [F0, E0, dF0, dE0, d2F0, d2E0] = derivativesE0(Q, pi_matrix, w_matrix, 
     outer_exp   = exp(rho * log_Q_inner);
     outer_term  = outer_exp.';         % Transpose to get column vector
     
+    initial = toc;
+
+    tic;
     % Final computation for F0 and E0
     F0 = Q' * pi_term * outer_term;
-    E0 = -log2((1/pi)*F0);
+    % E0 = -log2((1/pi)*F0);
+    first = toc;
     
     %% Compute first derivative dF0
+    tic;
     % Precompute common factor for derivative (combine terms from s and sp)
     common_factor = sp * rho + s;  % so that term1 = -common_factor * logW
     term1_part = -common_factor * logW;
@@ -40,9 +46,11 @@ function [F0, E0, dF0, dE0, d2F0, d2E0] = derivativesE0(Q, pi_matrix, w_matrix, 
     
     % Total first derivative
     dF0 = Term1 + Term2;
-    dE0 = -dF0 / (F0 * log(2));  % using natural log for conversion
+    % dE0 = -dF0 / (F0 * log(2));  % using natural log for conversion
+    second = toc;
     
     %% Compute second derivative d2F0
+    tic;
     % Precompute parts from the first derivative that we need squared
     term1_sq = term1_part.^2;
     common_factor2 = spp * rho + 2 * sp;  % from derivative of (sp*rho+s)
@@ -78,5 +86,8 @@ function [F0, E0, dF0, dE0, d2F0, d2E0] = derivativesE0(Q, pi_matrix, w_matrix, 
     d2F0 = Term1_2 + Term2_2 + Term3_2 + Term4_2 + Term5_2;
     
     % Finally, compute the second derivative d2E0 from F0, dF0, and d2F0
-    d2E0 = -(d2F0 * F0 - dF0^2) / (F0^2 * log(2));
+    % d2E0 = -(d2F0 * F0 - dF0^2) / (F0^2 * log(2));
+    third = toc; 
+
+    times = [initial, first, second, third];
 end

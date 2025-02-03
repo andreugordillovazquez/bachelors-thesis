@@ -22,7 +22,7 @@ function [rho_opt, E0_max] = optimizationNewton(Q, pi_matrix, g_matrix, R, tol, 
 %       E0_max    - The value of the function E0 evaluated at rho_opt.
 %
 
-    iter = uint32(0);
+    iter = 1;
     log2_const = log(2);
     rho = rho_star;
     max_iter = 100;
