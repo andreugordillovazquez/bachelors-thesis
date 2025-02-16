@@ -18,6 +18,8 @@ end
 using Metal
 using GPUArrays
 using Random
+using LinearAlgebra
+using Statistics
 
 ###############################################################################
 # computeF0_all_metal:
@@ -41,10 +43,14 @@ function computeF0_all_metal(rho::Float32,
                              pi_mat::Matrix{Float32},
                              W::Matrix{Float32})
 
+    A = rand(100)
+    dA = MetalArray(A)   # create a GPU array on Metal
+    
+    # Convert to MetalArrays
     println("1. GPU Data Transfer:")
     @time begin
-        Wd     = MtlArray(W)
-        pid    = MtlArray(pi_mat)
+        Wd     = MetalArray(W)
+        pid    = MetalArray(pi_mat)
     end
 
     println("\n2. Computing basic operations:")
@@ -129,6 +135,113 @@ function computeF0_all_metal(rho::Float32,
     return F0_val, F0p_val, F0pp_val
 end
 
+function gauss_hermite(n::Int)
+    # Main diagonal (alpha) of Hermite tridiagonal matrix is all zeros.
+    a = zeros(n)
+    # Off-diagonal (beta) values: sqrt(k/2) for k = 1..n-1
+    b = [ sqrt(k/2) for k in 1:(n-1) ]
+    
+    # Form the symmetric tridiagonal matrix
+    T = SymTridiagonal(a, b)
+    
+    # Compute its eigen-decomposition
+    E = eigen(T)
+    x = E.values   # Unsorted nodes
+    V = E.vectors  # Corresponding eigenvectors
+    
+    # Weights: w[i] = (first-component of ith eigenvector)^2 * sqrt(pi)
+    w = [ V[1, i]^2 * sqrt(pi) for i in 1:n ]
+    
+    # Sort by ascending node order
+    p = sortperm(x)
+    x_sorted = x[p]
+    w_sorted = w[p]
+    
+    return x_sorted, w_sorted
+end
+
+function createPiMatrix(M, N, weights)
+    # Initialize matrix with zeros
+    pi_matrix = zeros(Float32, M, N^2 * M)
+    
+    # For each row
+    for i in 1:M
+        # For all combinations of weights
+        idx = 1
+        for j in 1:N
+            for k in 1:N
+                # Calculate weight product
+                pi_block = weights[j] * weights[k]
+                # Calculate column position
+                col = (i - 1) * N^2 + idx
+                # Assign the weight product
+                pi_matrix[i, col] = pi_block
+                idx += 1
+            end
+        end
+    end
+    
+    return pi_matrix
+end
+
+function createGMatrix(X, z_matrix, SNR)
+    # Number of source symbols
+    M = length(X)
+    
+    # Assuming z_matrix is N-by-N
+    N = size(z_matrix, 1)
+    
+    # Initialize the output matrix
+    g_matrix = zeros(M, M * N^2)
+    
+    # Loop over "received symbols" (j)
+    for j in 1:M
+        # Precompute d for this j: sqrt(SNR) * (X - X[j])
+        d = sqrt(SNR) .* (X .- X[j])  # elementwise .- and .* for broadcasting
+        
+        # Column indices for the current block (corresponding to j)
+        col_idx = ((j - 1) * N^2 + 1) : (j * N^2)
+        
+        # Loop over "source symbols" (i)
+        for i in 1:M
+            # Compute G over all quadrature nodes:
+            #   z_matrix is N×N, d[i] is scalar, so we do z_matrix .+ d[i].
+            g_vals = Float32.((1f0 / π) .* exp.(-abs2.(z_matrix .+ d[i])));
+            
+            # g_vals = Float32((1 / π) * exp(-abs2(z_matrix .+ d[i])))
+            # g_vals = G.(z_matrix .+ d[i])  # broadcast the function G
+            
+            # Flatten the NxN matrix into a vector, then store in row i
+            g_matrix[i, col_idx] = vec(g_vals)' 
+            # (vec(g_vals) is a 1D vector of length N^2; 
+            #  the apostrophe ' performs a transpose => 1×(N^2) row)
+        end
+    end
+    
+    return g_matrix
+end
+
+function createComplexNodesMatrix(nodes)
+    N = length(nodes)
+    # Initialize an N×N array of complex zeros
+    z_matrix = zeros(ComplexF64, N, N)
+    
+    for i in 1:N
+        for j in 1:N
+            z_matrix[i, j] = nodes[i] + im * nodes[j]
+        end
+    end
+    
+    return z_matrix
+end
+
+function generatePAMConstellation(M::Int, d::Real)
+    # Create a range from -half to half in steps of 1, then scale by d
+    half = (M - 1) / 2
+    pam = collect(-half:1:half) .* d
+    return Float32.(pam)  # Convert to Float32
+end
+
 ###############################################################################
 # Test / Demo
 ###############################################################################
@@ -138,14 +251,28 @@ function testF0Metal()
 
     println("Generating test data...")
     # Example dimensions
-    M = 1024
-    n = 20
+    M = 2
+    n = 2
+    SNR = Float32(1.0)  # Convert to Float32
+    G(z) = Float32((1 / π) * exp(-abs2(z)))  # Ensure Float32 output
 
-    # Create random W, pi, Q in Float32
-    W_cpu       = rand(Float32, M, M*n) .+ 0.1f0  # offset to avoid log(0)
-    pi_cpu      = rand(Float32, M, M*n)
-    Q_cpu       = rand(Float32, M)
-    rho_test    = 0.5f0
+    # Generate PAM constellation and normalize power
+    X = generatePAMConstellation(M, 2)
+    X ./= sqrt(mean(X .^ 2))  # Normalize average power to 1
+
+    # Create test data
+    nodes, weights = gauss_hermite(n)
+    Z_cpu = createComplexNodesMatrix(nodes)
+    W_cpu = Float32.(createGMatrix(X, Z_cpu, SNR))  # Convert to Float32
+    pi_cpu = Float32.(createPiMatrix(M, n, weights))   # Convert to Float32
+    Q_cpu = fill(Float32(1/M), M)  # Create uniform distribution in Float32
+
+    println("\nMatrices:")
+    println("W_cpu: $W_cpu")
+    println("pi_cpu: $pi_cpu")
+    println("Q_cpu: $Q_cpu")
+
+    rho_test = 0.5f0
 
     println("\nRunning computation...")
     # Time the main computation

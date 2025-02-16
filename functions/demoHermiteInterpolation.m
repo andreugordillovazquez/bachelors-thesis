@@ -39,20 +39,20 @@ function rho_star = demoHermiteInterpolation(E0_0, E0p_0, E0_1, E0p_1, R)
     fprintf('Approx. max of G(rho) is %.4f at rho = %.4f\n', p_max, rho_star);
 
     % --- 4) Plot the interpolation and the provided "exact" values
-    figure; hold on; grid on;
-    rho_plot = linspace(0, 1, 200);
-    plot(rho_plot, p(rho_plot), 'b-', 'LineWidth', 1.5);
-    plot(candidates, p_vals, 'ro', 'MarkerSize', 8);
-    
+    % figure; hold on; grid on;
+    % rho_plot = linspace(0, 1, 200);
+    % plot(rho_plot, p(rho_plot), 'b-', 'LineWidth', 1.5);
+    % plot(candidates, p_vals, 'ro', 'MarkerSize', 8);
+    % 
     % Here we assume that the vector E0_values represents the ρ-points (or the
     % exact G(ρ) values) computed externally. In this example we treat them as the
     % ρ-points and plot the interpolation evaluated at those points.
-    plot(E0_values, p(E0_values), 'g--', 'LineWidth', 1.5);
-    
-    xlabel('\rho'); ylabel('G(\rho) = E_0(\rho) - \rho R');
-    title('Hermite Interpolation for G(\rho) = E_0(\rho) - \rho R');
-    legend('Hermite Interpolation', 'Critical Points', 'Provided values');
-    hold off;
+    % plot(E0_values, p(E0_values), 'g--', 'LineWidth', 1.5);
+    % 
+    % xlabel('\rho'); ylabel('G(\rho) = E_0(\rho) - \rho R');
+    % title('Hermite Interpolation for G(\rho) = E_0(\rho) - \rho R');
+    % legend('Hermite Interpolation', 'Critical Points', 'Provided values');
+    % hold off;
 
     % --- 5) Compute errors between the interpolated values and the provided ones
     % If you have the "exact" values of G(ρ) at the points in E0_values (say, in a

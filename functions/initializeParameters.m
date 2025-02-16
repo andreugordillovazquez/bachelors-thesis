@@ -31,12 +31,7 @@ function params = initializeParameters()
     disp('----------------------------------------------------------------');
 
     % Generate constellation points
-    X = zeros(1, params.M);
-    aux = -(params.M - 1);
-    for i = 1:params.M
-        X(i) = aux;
-        aux = aux + 2;
-    end
+    X = generatePAMConstellation(M, 2);
 
     % Normalize constellation points
     avg_energy = mean(X.^2);

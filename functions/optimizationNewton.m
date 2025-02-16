@@ -30,7 +30,8 @@ function [rho_opt, E0_max] = optimizationNewton(Q, pi_matrix, g_matrix, R, tol, 
     
     while (iter < max_iter)
         % Compute all derivatives in one pass to avoid redundant calculations
-        [F0, E0, dF0, ~, d2F0, ~] = derivativesE0(Q, pi_matrix, g_matrix, rho);
+        [F0, dF0, d2F0] = derivativesE0(Q, pi_matrix, g_matrix, rho);
+        E0 = -log2((1/pi)*F0);
 
         % Optimize divisions by precomputing repeated values
         f_inv = 1/F0;
@@ -45,7 +46,7 @@ function [rho_opt, E0_max] = optimizationNewton(Q, pi_matrix, g_matrix, R, tol, 
             break;
         end
         
-        disp(rho);
+        % disp(rho);
 
         % Compute new rho value and clamp to [0, 1]
         rho_new = rho - gradient / curvature;
@@ -64,5 +65,5 @@ function [rho_opt, E0_max] = optimizationNewton(Q, pi_matrix, g_matrix, R, tol, 
     % E0(rho_opt) (the function value at final rho):
     E0_max = E0;
 
-    fprintf('\nNewton algorithm finished after %u iterations.\n', iter);
+    % fprintf('\nNewton algorithm finished after %u iterations.\n', iter);
 end
