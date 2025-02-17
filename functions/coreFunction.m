@@ -27,7 +27,7 @@ function [totalEstimatedRunningTime, totalRunningTime] = coreFunction(M, n, SNR,
     
     %% Total Estimated Running Time Calculation
     % Empirical factor from Excel (in nanoseconds per (n^2 * M^2))
-    ratio = 56;  % ns
+    ratio = 112.23;  % ns
     totalEstimatedRunningTime = (ratio * sum(n.^2) * sum(M.^2)) / 1e6;  % convert ns to ms
     fprintf('Total estimated running time over all iterations: %.2f ms\n', totalEstimatedRunningTime);
     fprintf('--------------------------------------------------------\n');
