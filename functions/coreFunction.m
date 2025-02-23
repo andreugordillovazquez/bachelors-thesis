@@ -1,10 +1,9 @@
-function [totalEstimatedRunningTime, totalRunningTime] = coreFunction(M, n, SNR, R)
+function [totalEstimatedRunningTime, totalRunningTime, runningTimes] = coreFunction(M, n, SNR, R)
     % coreFunction computes:
     %   1) The total estimated running time (in ms) for all iterations,
-    %      based on the empirical factor of 56 ns per (n^2*M^2).
+    %      based on an empirical factor (in ns) per (n^2 * M^2).
     %   2) The actual running time in seconds (totalRunningTime).
-    %   3) The probability of error Pe = 2^(-n_eff * E(R)) for each combination,
-    %      where n_eff = log2(M) / R.
+    %   3) The running times for each key section (returned in runningTimes).
     %
     % Inputs:
     %   M   - Constellation sizes (scalar or vector)
@@ -15,8 +14,9 @@ function [totalEstimatedRunningTime, totalRunningTime] = coreFunction(M, n, SNR,
     % Outputs:
     %   totalEstimatedRunningTime - Total estimated running time (ms) over all iterations
     %   totalRunningTime          - Actual total running time (seconds) measured by tic/toc
+    %   runningTimes              - Structure array with timing information for each (M,n) iteration
 
-    tic;  % Start measuring the actual running time
+    overallTimer = tic;  % Start overall timing
 
     fprintf('Simulation Parameters:\n');
     fprintf('  SNR  = %.2f\n', SNR);
@@ -34,18 +34,18 @@ function [totalEstimatedRunningTime, totalRunningTime] = coreFunction(M, n, SNR,
 
     totalComb = numel(M) * numel(n);
     iterCount = 0;
-
-    % Create a waitbar to track overall progress
-    hWait = waitbar(0, 'Initializing simulations...');
-
+    
+    % Preallocate structure array for timing data
+    runningTimes(totalComb) = struct('M_val', [], 'n_val', [], 'M_setup', [], 'n_setup', [], 'Combined', [], 'Optimization', []);
+    
     %% Loop for each constellation size M
     for m_idx = 1:numel(M)
         M_val = M(m_idx);
         fprintf('\n================ Processing M = %d (%d of %d) ================\n', ...
             M_val, m_idx, numel(M));
         
-        %% Compute quantities that depend only on M
-        % Generate and normalize the PAM constellation once for this M value.
+        %% M-dependent setup: Generate and normalize the PAM constellation
+        tM = tic;
         d = 2;  % Define PAM spacing
         fprintf('-> Generating PAM constellation with M = %d symbols and spacing d = %d...\n', M_val, d);
         X = generatePAMConstellation(M_val, d);
@@ -55,22 +55,19 @@ function [totalEstimatedRunningTime, totalRunningTime] = coreFunction(M, n, SNR,
         % Initialize the probability distribution for constellation symbols (depends only on M)
         Q = repmat(1/M_val, M_val, 1);
         fprintf('-> Probability distribution for constellation symbols initialized.\n');
+        tM_elapsed = toc(tM) * 1000;  % Convert to ms
+        fprintf('M-dependent setup time: %.6f ms\n', tM_elapsed);
         
         %% Inner Loop: For each number of Gauss-Hermite nodes n
         for n_idx = 1:numel(n)
             iterCount = iterCount + 1;
-
-            % Update the waitbar
-            progress = iterCount / totalComb;
-            waitbar(progress, hWait, sprintf('Processing iteration %d of %d', iterCount, totalComb));
-
             n_val = n(n_idx);
             fprintf('\n---------------- Iteration %d of %d ----------------\n', iterCount, totalComb);
             fprintf('Processing for n = %d, M = %d\n', n_val, M_val);
             
-            %% Compute quantities that depend only on n
-            % Use n_val as the number of Gauss-Hermite nodes (N)
-            N = n_val;
+            %% n-dependent setup: Compute Gauss-Hermite nodes, weights, and complex nodes matrix
+            tN = tic;
+            N = n_val;  % Number of Gauss-Hermite nodes
             fprintf('-> Computing Gauss-Hermite nodes and weights with N = %d...\n', N);
             [nodes, weights] = GaussHermite_Locations_Weights(N);
             fprintf('   Gauss-Hermite nodes and weights computed.\n');
@@ -78,8 +75,11 @@ function [totalEstimatedRunningTime, totalRunningTime] = coreFunction(M, n, SNR,
             % Compute the complex nodes matrix (depends only on n)
             z_matrix = createComplexNodesMatrix(nodes);
             fprintf('-> z_matrix computed for N = %d.\n', N);
+            tN_elapsed = toc(tN) * 1000;
+            fprintf('n-dependent setup time: %.6f ms\n', tN_elapsed);
             
-            %% Combine M- and n-dependent parts
+            %% Combined M & n dependent computations: Create matrices for computation
+            tCombined = tic;
             fprintf('-> Creating required matrices for computation...\n');
             % Define the Gaussian function G
             G = @(z) exp(-abs(z).^2) / pi;
@@ -87,9 +87,11 @@ function [totalEstimatedRunningTime, totalRunningTime] = coreFunction(M, n, SNR,
             pi_matrix = createPiMatrix(M_val, N, weights);
             % g_matrix depends on the constellation X (M) and z_matrix (n)
             g_matrix = createGMatrix(X, z_matrix, SNR, G);
-            fprintf('   Required matrices created.\n');
+            tCombined_elapsed = toc(tCombined) * 1000;
+            fprintf('Combined (M & n) computation time: %.6f ms\n', tCombined_elapsed);
             
-            %% Find the Optimal rho
+            %% Optimization routine: Find the Optimal rho
+            tOpt = tic;
             fprintf('-> Starting optimization for n = %d, M = %d...\n', n_val, M_val);
             % Compute E0 at endpoints (rho = 0 and rho = 1) and their derivatives
             E00  = 0;  % E0 at rho = 0
@@ -120,23 +122,19 @@ function [totalEstimatedRunningTime, totalRunningTime] = coreFunction(M, n, SNR,
             
             fprintf('   Optimization complete.\n');
             fprintf('   Optimal rho: %.6f, Maximum E0: %.6f\n', rho_opt, ER_max);
+            tOpt_elapsed = toc(tOpt) * 1000;
+            fprintf('Optimization routine time: %.6f ms\n', tOpt_elapsed);
             
-            %% Compute the error probability Pe
-            % Calculate effective blocklength using the relation M = 2^(n_eff * R)
-            % => n_eff = log2(M) / R.
-            n_eff = log2(M_val) / R;
-            % Compute Pe = 2^(-n_eff * ER_max)
-            Pe = 2^(-n_eff * ER_max);
-            fprintf('-> For M = %d and R = %.4f, effective blocklength n_eff = log2(%d)/%.4f = %.4f\n', ...
-                M_val, R, M_val, R, n_eff);
-            fprintf('   Computed error probability Pe = 2^(-%.4f * %.6f) = %.4e\n', n_eff, ER_max, Pe);
-            fprintf('--------------------------------------------------------\n');
+            %% Store the running times in the structure array
+            runningTimes(iterCount).M_val       = M_val;
+            runningTimes(iterCount).n_val       = n_val;
+            runningTimes(iterCount).M_setup     = tM_elapsed;
+            runningTimes(iterCount).n_setup     = tN_elapsed;
+            runningTimes(iterCount).Combined    = tCombined_elapsed;
+            runningTimes(iterCount).Optimization = tOpt_elapsed;
         end
     end
     
-    % Close the waitbar once all iterations are done
-    close(hWait);
-
     fprintf('\n==================== END OF SIMULATIONS ====================\n');
-    totalRunningTime = toc;  % End timing
+    totalRunningTime = toc(overallTimer);  % End overall timing
 end
