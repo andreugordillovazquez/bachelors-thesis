@@ -106,22 +106,24 @@ function [totalEstimatedRunningTime, totalRunningTime, runningTimes] = coreFunct
             rho_star = demoHermiteInterpolation(E00, E0P0, E01, E0P1, R);
             fprintf('   Initial guess for rho: %.6f\n', rho_star);
             
-            tol = 1e-7;  % Convergence tolerance
+            tol = 1e-10;  % Convergence tolerance
             if R > E0P0
                 fprintf('   R (%.6f) > derivative at 0 (%.6f): setting optimal rho = 0\n', R, E0P0);
                 rho_opt = 0;
-                ER_max  = E00;
+                E0_max  = E00;
             elseif R < E0P1
                 fprintf('   R (%.6f) < derivative at 1 (%.6f): setting optimal rho = 1\n', R, E0P1);
                 rho_opt = 1;
-                ER_max  = E01;
+                E0_max  = E01;
             else
                 fprintf('-> Running Newton''s method to optimize rho...\n');
-                [rho_opt, ER_max] = optimizationNewton(Q, pi_matrix, g_matrix, R, tol, rho_star);
+                [rho_opt, E0_max] = optimizationNewton(Q, pi_matrix, g_matrix, R, tol, rho_star);
             end
             
             fprintf('   Optimization complete.\n');
-            fprintf('   Optimal rho: %.6f, Maximum E0: %.6f\n', rho_opt, ER_max);
+            fprintf('   Optimal rho: %.10f, Maximum E0: %.10f\n', rho_opt, E0_max);
+            maxER = E0_max - rho_opt*R;
+            fprintf('   Maximum E(R): %.10f\n', maxER);
             tOpt_elapsed = toc(tOpt) * 1000;
             fprintf('Optimization routine time: %.6f ms\n', tOpt_elapsed);
             
