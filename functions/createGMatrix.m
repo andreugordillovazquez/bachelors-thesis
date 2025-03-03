@@ -3,7 +3,10 @@ function g_matrix = createGMatrix(X, z_matrix, SNR, G)
     N = size(z_matrix, 1);      % Assuming z_matrix is N-by-N
     g_matrix = zeros(M, M * N^2);  % Initialize matrix: one block per received symbol j
 
+    % SNR = 10^(SNR/10);
+
     % Loop over received symbols (j) and source symbols (i)
+    disp(["SNR: ", SNR]);
     for j = 1:M
         % Precompute the term for the given j: sqrt(SNR)*(X - X(j))
         d = sqrt(SNR) * (X - X(j));  % This is an Mx1 vector; each entry corresponds to a different i

@@ -1,4 +1,4 @@
-function [totalEstimatedRunningTime, totalRunningTime, runningTimes] = coreFunction(M, n, SNR, R)
+function [totalEstimatedRunningTime, totalRunningTime, g_matrix] = coreFunction(M, n, SNR, R)
     % coreFunction computes:
     %   1) The total estimated running time (in ms) for all iterations,
     %      based on an empirical factor (in ns) per (n^2 * M^2).
@@ -15,6 +15,8 @@ function [totalEstimatedRunningTime, totalRunningTime, runningTimes] = coreFunct
     %   totalEstimatedRunningTime - Total estimated running time (ms) over all iterations
     %   totalRunningTime          - Actual total running time (seconds) measured by tic/toc
     %   runningTimes              - Structure array with timing information for each (M,n) iteration
+
+    SNR = 10^(SNR/10);
 
     overallTimer = tic;  % Start overall timing
 
@@ -48,12 +50,8 @@ function [totalEstimatedRunningTime, totalRunningTime, runningTimes] = coreFunct
         tM = tic;
         d = 2;  % Define PAM spacing
         fprintf('-> Generating PAM constellation with M = %d symbols and spacing d = %d...\n', M_val, d);
-        X = generatePAMConstellation(M_val, d);
-        X = X / sqrt(mean(X.^2));
+        [X, Q] = generatePAMConstellation(M_val, d);
         fprintf('   Constellation generated and normalized.\n');
-        
-        % Initialize the probability distribution for constellation symbols (depends only on M)
-        Q = repmat(1/M_val, M_val, 1);
         fprintf('-> Probability distribution for constellation symbols initialized.\n');
         tM_elapsed = toc(tM) * 1000;  % Convert to ms
         fprintf('M-dependent setup time: %.6f ms\n', tM_elapsed);
@@ -87,12 +85,14 @@ function [totalEstimatedRunningTime, totalRunningTime, runningTimes] = coreFunct
             pi_matrix = createPiMatrix(M_val, N, weights);
             % g_matrix depends on the constellation X (M) and z_matrix (n)
             g_matrix = createGMatrix(X, z_matrix, SNR, G);
+            % disp(["1,1: ", g_matrix(1,1)]);
             tCombined_elapsed = toc(tCombined) * 1000;
             fprintf('Combined (M & n) computation time: %.6f ms\n', tCombined_elapsed);
             
             %% Optimization routine: Find the Optimal rho
             tOpt = tic;
             fprintf('-> Starting optimization for n = %d, M = %d...\n', n_val, M_val);
+
             % Compute E0 at endpoints (rho = 0 and rho = 1) and their derivatives
             E00  = 0;  % E0 at rho = 0
             E01  = computeEoForRhoExponential(1, Q, pi_matrix, g_matrix);  % E0 at rho = 1

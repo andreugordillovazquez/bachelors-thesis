@@ -15,9 +15,10 @@ def computeEoForRhoExponential(rho, Q, pi_matrix, g_matrix):
     """
     # Precomputed term
     s = 1 / (1 + rho)
-    
+    # print(np.min(np.real(g_matrix)))
+    # print(np.real(g_matrix[0,0]))
     # Compute log_W for numerical stability (elementwise logarithm)
-    log_W = np.log(g_matrix)
+    log_W = np.log(np.real(g_matrix))
     
     # Compute π .* W^{-sρ} using elementwise multiplication
     pi_term = pi_matrix * np.exp(-s * rho * log_W)

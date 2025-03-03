@@ -23,7 +23,7 @@ function [F0, dF0, d2F0] = derivativesE0(Q, pi_matrix, w_matrix, rho)
     % tic;
     % Final computation for F0 and E0
     F0 = Q' * pi_term * outer_term;
-    % E0 = -log2((1/pi)*F0);
+    % E0 = -log2(F0);
     % first = toc;
     
     %% Compute first derivative dF0

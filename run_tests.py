@@ -50,6 +50,20 @@ def run_simulation(constellationM, signalNoiseRatio, transmissionRate, nodesN=20
     pi_matrix = createPiMatrix(constellationM, nodesN, weights)
     z_matrix = createComplexNodesMatrix(nodes)
     g_matrix = createGMatrix(X, z_matrix, signalNoiseRatio, G)
+    print(g_matrix)
+    
+    """# Save g_matrix to CSV (real parts only)
+    timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+    filename = f"g_matrix_M{constellationM}_SNR{signalNoiseRatio}_N{nodesN}_{timestamp}.csv"
+    
+    # Save only real parts
+    np.savetxt(
+        filename,
+        g_matrix.real,  # Only real parts
+        delimiter=',',
+        fmt='%.10e'
+    )
+    print(f"G matrix (real parts) saved to {filename}")"""
     
     # Find an Initial Guess for the Optimization
     E00 = 0  # E0 at rho = 0
@@ -88,15 +102,17 @@ def run_simulation(constellationM, signalNoiseRatio, transmissionRate, nodesN=20
 
 def main():
     # Fixed parameters
-    constellationM = 4
-    nodesN = 20
+    constellationM = 2
+    nodesN = 2
     tableName = 'exponents'
     
     # SNR range from -10 to 20 dB
-    snr_values_dB = np.arange(-10, 21, 1)  # Step size of 2 dB for faster testing
+    # snr_values_dB = np.arange(5, 10, 1)  # Step size of 2 dB for faster testing
+    snr_values_dB = [0]
     
     # Transmission rate range from 0 to 1 with step size 0.05
-    rate_values = np.arange(0, 2.01, 0.1) 
+    # rate_values = np.arange(0, 2.01, 0.1) 
+    rate_values = [0]
     
     # Total number of simulations
     total_simulations = len(snr_values_dB) * len(rate_values)

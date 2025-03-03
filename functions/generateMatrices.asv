@@ -1,0 +1,15 @@
+function [outputArg1,outputArg2] = generateMatrices(X, M, N, nodes, weights, SNR)
+    % We need to generate pi and G, for G we need also z_matrix so we'll
+    % gernerate it here as well
+
+    %% Generate z_matrix
+    z_matrix = zeros(N, N);
+    for i = 1:N
+        for j = 1:N
+            z_matrix(i,j) = nodes(i) + 1i*nodes(j);
+        end
+    end
+
+    %% Generate g
+end
+

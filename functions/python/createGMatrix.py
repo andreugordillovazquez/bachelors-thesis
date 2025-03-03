@@ -26,9 +26,14 @@ def createGMatrix(X, z_matrix, SNR_dB, G):
     M = len(X)
     N = z_matrix.shape[0]
     g_matrix = np.zeros((M, M * (N**2)), dtype=complex)
+
+    print("SNR", SNR)
     
     # Loop over received symbols (j)
     for j in range(M):
+        print(X)
+        print(z_matrix)
+
         # Precompute the term: sqrt(SNR)*(X - X[j])
         d = np.sqrt(SNR) * (X - X[j])
         # Determine column indices for the current block corresponding to j
