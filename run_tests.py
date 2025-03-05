@@ -102,17 +102,17 @@ def run_simulation(constellationM, signalNoiseRatio, transmissionRate, nodesN=20
 
 def main():
     # Fixed parameters
-    constellationM = 2
-    nodesN = 2
+    constellationM = 4
+    nodesN = 20
     tableName = 'exponents'
     
     # SNR range from -10 to 20 dB
     # snr_values_dB = np.arange(5, 10, 1)  # Step size of 2 dB for faster testing
-    snr_values_dB = [0]
+    snr_values_dB = [1]
     
     # Transmission rate range from 0 to 1 with step size 0.05
     # rate_values = np.arange(0, 2.01, 0.1) 
-    rate_values = [0]
+    rate_values = [0.5]
     
     # Total number of simulations
     total_simulations = len(snr_values_dB) * len(rate_values)

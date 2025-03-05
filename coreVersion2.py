@@ -15,10 +15,10 @@ import time
 
 # -------------------- System Parameters --------------------
 nodesN = 20          # Number of quadrature nodes (for Gauss-Hermite integration)
-signalNoiseRatio = 5        # Signal-to-Noise Ratio
-constellationM = 2           # Size of the PAM constellation (number of symbols)
+signalNoiseRatio = 1        # Signal-to-Noise Ratio
+constellationM = 4           # Size of the PAM constellation (number of symbols)
 d = 2           # Distance parameter (spacing between constellation points)
-transmissionRate = 0.4         # Communication rate
+transmissionRate = 0.5         # Communication rate
 
 # -------------------- Compute Gauss-Hermite Nodes and Weights --------------------
 # These are used for numerical integration over a Gaussian density.

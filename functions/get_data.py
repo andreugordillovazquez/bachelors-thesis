@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 import argparse
 import boto3
+import json
 from decimal import Decimal
 from boto3.dynamodb.conditions import Attr
+
+def decimal_default(obj):
+    if isinstance(obj, Decimal):
+        return float(obj)
+    raise TypeError
 
 def main():
     parser = argparse.ArgumentParser(description="Retrieve data from a DynamoDB table with optional numeric filters.")
@@ -61,15 +67,13 @@ def main():
         if not last_evaluated_key:
             break
 
-    # Print results
     if not items:
-        print("No matching items found.")
+        result = {"status": "no_data", "message": "No matching items found."}
     else:
-        print(f"Found {len(items)} matching item(s):")
-        for idx, item in enumerate(items, start=1):
-            errorExp = item.get('errorExponent')
-            optRho   = item.get('optimalRho')
-            print(f"Item #{idx}: errorExponent={errorExp}, optimalRho={optRho}")
+        result = {"status": "success", "numItems": len(items), "items": items}
+
+    # Ensure this is the only output to stdout:
+    print(json.dumps(result, default=decimal_default))
 
 if __name__ == "__main__":
     main()

@@ -21,8 +21,6 @@ function rho_star = demoHermiteInterpolation(E0_0, E0p_0, E0_1, E0p_1, R)
     % --- 2) Build the cubic Hermite interpolant for G(rho)
     [p, ~, coefs] = hermiteInterp(A, B, C, D);
 
-    disp(coefs);
-
     % --- 3) Find critical points in [0,1]
     % The derivative of p(rho) is: dp(rho) = b + 2*c*rho + 3*d*rho^2,
     % where coefs = [a, b, c, d]. Compute the roots of:
@@ -35,9 +33,6 @@ function rho_star = demoHermiteInterpolation(E0_0, E0p_0, E0_1, E0p_1, R)
     p_vals     = p(candidates);
     [p_max, idx] = max(p_vals);
     rho_star   = candidates(idx);
-
-    % Print the approximate maximum G(rho_star)
-    fprintf('Approx. max of G(rho) is %.6f at rho = %.4f\n', p_max, rho_star);
 end
 
 % --------------- Hermite Interpolation for 2 Points -----------------
