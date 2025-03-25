@@ -15,6 +15,9 @@ function [g_matrix , pi_matrix] = generateMatrices(X, M, N, nodes, weights, SNR)
     % This anonymous function computes a normalized Gaussian value for a given z.
     G = @(z) exp(-abs(z).^2) / pi;
 
+    % Define clipping to avoid NaN values when using larger values
+    clip = 100;
+
     %% Generate the complex nodes matrix Z
     % Create an N x N matrix where each entry represents a complex node:
     % combining real parts from nodes(i) and imaginary parts from nodes(j).
@@ -51,6 +54,8 @@ function [g_matrix , pi_matrix] = generateMatrices(X, M, N, nodes, weights, SNR)
             g_matrix(i, col_idx) = g_vals(:).';
         end
     end
+
+    g_matrix = max(g_matrix, exp(-clip));
 
     %% Generate π matrix
     % Initialize the π matrix.
