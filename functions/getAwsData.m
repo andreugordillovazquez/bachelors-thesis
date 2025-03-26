@@ -12,6 +12,8 @@ function data = getAwsData(M, N, SNR, R)
     % --nodesN: passes the value of N
     % --SNR: passes the signal-to-noise ratio
     % --transmissionRate: passes the transmission rate R
+
+    %% We need to check the OS to see which cmd command should I run
     cmd = sprintf('python3 "%s" --table %s --constellationM %f --nodesN %f --SNR %f --transmissionRate %f', ...
         pythonScript, tableName, M, N, SNR, R);
     
