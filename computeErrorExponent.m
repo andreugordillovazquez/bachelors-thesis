@@ -1,4 +1,4 @@
-function [maxER, optRho] = mainCore(M, N, SNR_dB, R)
+function [maxER, optRho] = computeErrorExponent(M, N, SNR_dB, R)
     SNR = 10^(SNR_dB/10);
     d = 2;
 
@@ -6,9 +6,9 @@ function [maxER, optRho] = mainCore(M, N, SNR_dB, R)
     data = getAwsData(M, N, SNR, R);
 
     if data.status == "success"
-        disp("Data recovered from AWS");
-        maxER = data.items.errorExponent;
-        optRho = data.items.optimalRho;
+       disp("Data recovered from AWS");
+       maxER = data.items.errorExponent;
+       optRho = data.items.optimalRho;
     else
         %% Compute Gauss-Hermite Nodes and Weights
         % These are used for numerical integration over a Gaussian density.
@@ -52,7 +52,7 @@ function [maxER, optRho] = mainCore(M, N, SNR_dB, R)
     
         maxER = E0_max - optRho*R;
 
-        % addAwsData(M, N, SNR, R, maxER, optRho);
+        addAwsData(M, N, SNR, R, maxER, optRho);
     end
 end
 

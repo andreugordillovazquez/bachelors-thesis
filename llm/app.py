@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from testLLM import generate_response
+from llm.testLLM import generate_response
 
 app = Flask(__name__)
 
