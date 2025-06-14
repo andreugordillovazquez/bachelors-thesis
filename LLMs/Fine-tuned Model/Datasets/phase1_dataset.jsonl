@@ -1,0 +1,200 @@
+{"input_text": "Write function call: Calculate the error probability with n=43, R=0.3, N=172, SNR=22, M=8", "target_text": "computeErrorProbability(n=43, R=0.3, N=172, SNR=22, M=8)"}
+{"input_text": "Write function call: Kindly compute the error probability with n=60, N=54, M=8, R=0.5, SNR=20", "target_text": "computeErrorProbability(n=60, N=54, M=8, R=0.5, SNR=20)"}
+{"input_text": "Write function call: Please calculate the error probability with M=16, N=83, n=50, SNR=21, R=0.8", "target_text": "computeErrorProbability(M=16, N=83, n=50, SNR=21, R=0.8)"}
+{"input_text": "Write function call: Calculate the error probability with SNR=11, n=69, M=2, N=98, R=0.7", "target_text": "computeErrorProbability(SNR=11, n=69, M=2, N=98, R=0.7)"}
+{"input_text": "Write function call: Calculate the error probability with N=188, R=0.7, n=47, SNR=9, M=4", "target_text": "computeErrorProbability(N=188, R=0.7, n=47, SNR=9, M=4)"}
+{"input_text": "Write function call: Compute the error probability with R=0.2, SNR=30, n=22, N=161, M=2", "target_text": "computeErrorProbability(R=0.2, SNR=30, n=22, N=161, M=2)"}
+{"input_text": "Write function call: Kindly compute the error probability with N=158, SNR=15, M=32, n=44, R=0.4", "target_text": "computeErrorProbability(N=158, SNR=15, M=32, n=44, R=0.4)"}
+{"input_text": "Write function call: Compute the error probability with SNR=28, M=8, n=39, N=155, R=0.9", "target_text": "computeErrorProbability(SNR=28, M=8, n=39, N=155, R=0.9)"}
+{"input_text": "Write function call: Please compute the error probability with R=0.4, N=192, M=16, SNR=5, n=93", "target_text": "computeErrorProbability(R=0.4, N=192, M=16, SNR=5, n=93)"}
+{"input_text": "Write function call: Compute the error probability with R=0.3, M=16, SNR=16, n=85, N=71", "target_text": "computeErrorProbability(R=0.3, M=16, SNR=16, n=85, N=71)"}
+{"input_text": "Write function call: Compute the error probability with SNR=29, M=8, n=46, R=0.6, N=103", "target_text": "computeErrorProbability(SNR=29, M=8, n=46, R=0.6, N=103)"}
+{"input_text": "Write function call: Compute the error probability with R=0.6, N=142, SNR=3, M=8, n=47", "target_text": "computeErrorProbability(R=0.6, N=142, SNR=3, M=8, n=47)"}
+{"input_text": "Write function call: Please compute the error probability with R=1.0, SNR=10, N=113, M=8, n=41", "target_text": "computeErrorProbability(R=1.0, SNR=10, N=113, M=8, n=41)"}
+{"input_text": "Write function call: Kindly compute the error probability with N=172, n=68, M=16, SNR=23, R=0.9", "target_text": "computeErrorProbability(N=172, n=68, M=16, SNR=23, R=0.9)"}
+{"input_text": "Write function call: Please calculate the error probability with M=8, N=131, n=96, R=0.7, SNR=0", "target_text": "computeErrorProbability(M=8, N=131, n=96, R=0.7, SNR=0)"}
+{"input_text": "Write function call: Calculate the error probability with M=2, SNR=24, R=0.8, n=72, N=172", "target_text": "computeErrorProbability(M=2, SNR=24, R=0.8, n=72, N=172)"}
+{"input_text": "Write function call: Kindly compute the error probability with n=53, N=120, M=32, SNR=27, R=0.7", "target_text": "computeErrorProbability(n=53, N=120, M=32, SNR=27, R=0.7)"}
+{"input_text": "Write function call: Compute the error probability with N=189, SNR=29, M=32, R=0.4, n=15", "target_text": "computeErrorProbability(N=189, SNR=29, M=32, R=0.4, n=15)"}
+{"input_text": "Write function call: Please calculate the error probability with R=0.2, N=188, SNR=12, n=20, M=2", "target_text": "computeErrorProbability(R=0.2, N=188, SNR=12, n=20, M=2)"}
+{"input_text": "Write function call: Please calculate the error probability with N=151, R=0.6, n=69, SNR=12, M=4", "target_text": "computeErrorProbability(N=151, R=0.6, n=69, SNR=12, M=4)"}
+{"input_text": "Write function call: Calculate the error probability with R=0.4, N=85, M=16, SNR=12, n=93", "target_text": "computeErrorProbability(R=0.4, N=85, M=16, SNR=12, n=93)"}
+{"input_text": "Write function call: Please compute the error probability with n=16, R=0.3, SNR=21, M=2, N=178", "target_text": "computeErrorProbability(n=16, R=0.3, SNR=21, M=2, N=178)"}
+{"input_text": "Write function call: Please calculate the error probability with SNR=11, M=2, n=27, N=80, R=0.8", "target_text": "computeErrorProbability(SNR=11, M=2, n=27, N=80, R=0.8)"}
+{"input_text": "Write function call: Please calculate the error probability with R=0.7, SNR=9, N=131, n=37, M=16", "target_text": "computeErrorProbability(R=0.7, SNR=9, N=131, n=37, M=16)"}
+{"input_text": "Write function call: Compute the error probability with M=2, R=1.0, SNR=23, n=43, N=182", "target_text": "computeErrorProbability(M=2, R=1.0, SNR=23, n=43, N=182)"}
+{"input_text": "Write function call: Compute the error probability with R=0.7, N=69, M=8, SNR=6, n=56", "target_text": "computeErrorProbability(R=0.7, N=69, M=8, SNR=6, n=56)"}
+{"input_text": "Write function call: Kindly compute the error probability with N=73, n=98, R=0.3, M=32, SNR=2", "target_text": "computeErrorProbability(N=73, n=98, R=0.3, M=32, SNR=2)"}
+{"input_text": "Write function call: Kindly compute the error probability with M=32, N=54, R=0.6, n=20, SNR=26", "target_text": "computeErrorProbability(M=32, N=54, R=0.6, n=20, SNR=26)"}
+{"input_text": "Write function call: Kindly compute the error probability with R=0.3, n=98, SNR=26, N=126, M=4", "target_text": "computeErrorProbability(R=0.3, n=98, SNR=26, N=126, M=4)"}
+{"input_text": "Write function call: Kindly compute the error probability with N=165, SNR=30, n=84, M=8, R=0.8", "target_text": "computeErrorProbability(N=165, SNR=30, n=84, M=8, R=0.8)"}
+{"input_text": "Write function call: Please calculate the error probability with N=108, SNR=9, n=37, M=16, R=0.9", "target_text": "computeErrorProbability(N=108, SNR=9, n=37, M=16, R=0.9)"}
+{"input_text": "Write function call: Compute the error probability with M=2, SNR=2, R=1.0, N=199, n=17", "target_text": "computeErrorProbability(M=2, SNR=2, R=1.0, N=199, n=17)"}
+{"input_text": "Write function call: Please compute the error probability with SNR=3, R=0.1, n=18, N=68, M=4", "target_text": "computeErrorProbability(SNR=3, R=0.1, n=18, N=68, M=4)"}
+{"input_text": "Write function call: Kindly compute the error probability with M=4, n=88, SNR=26, R=0.7, N=77", "target_text": "computeErrorProbability(M=4, n=88, SNR=26, R=0.7, N=77)"}
+{"input_text": "Write function call: Please compute the error probability with M=2, SNR=7, R=0.8, N=163, n=85", "target_text": "computeErrorProbability(M=2, SNR=7, R=0.8, N=163, n=85)"}
+{"input_text": "Write function call: Kindly compute the error probability with n=90, N=101, R=0.6, SNR=15, M=8", "target_text": "computeErrorProbability(n=90, N=101, R=0.6, SNR=15, M=8)"}
+{"input_text": "Write function call: Please calculate the error probability with R=0.5, SNR=26, N=155, n=47, M=32", "target_text": "computeErrorProbability(R=0.5, SNR=26, N=155, n=47, M=32)"}
+{"input_text": "Write function call: Kindly compute the error probability with SNR=13, n=21, R=0.7, M=16, N=150", "target_text": "computeErrorProbability(SNR=13, n=21, R=0.7, M=16, N=150)"}
+{"input_text": "Write function call: Compute the error probability with N=82, n=12, R=0.9, SNR=1, M=2", "target_text": "computeErrorProbability(N=82, n=12, R=0.9, SNR=1, M=2)"}
+{"input_text": "Write function call: Calculate the error probability with N=103, M=8, n=55, R=0.3, SNR=15", "target_text": "computeErrorProbability(N=103, M=8, n=55, R=0.3, SNR=15)"}
+{"input_text": "Write function call: Kindly compute the error probability with SNR=18, N=148, n=90, M=2, R=0.1", "target_text": "computeErrorProbability(SNR=18, N=148, n=90, M=2, R=0.1)"}
+{"input_text": "Write function call: Compute the error probability with SNR=3, N=63, R=0.8, n=82, M=32", "target_text": "computeErrorProbability(SNR=3, N=63, R=0.8, n=82, M=32)"}
+{"input_text": "Write function call: Kindly compute the error probability with n=89, N=176, SNR=25, M=32, R=0.8", "target_text": "computeErrorProbability(n=89, N=176, SNR=25, M=32, R=0.8)"}
+{"input_text": "Write function call: Compute the error probability with R=0.4, M=32, SNR=13, N=76, n=83", "target_text": "computeErrorProbability(R=0.4, M=32, SNR=13, N=76, n=83)"}
+{"input_text": "Write function call: Please compute the error probability with n=47, SNR=26, R=0.6, M=4, N=116", "target_text": "computeErrorProbability(n=47, SNR=26, R=0.6, M=4, N=116)"}
+{"input_text": "Write function call: Kindly compute the error probability with R=0.3, SNR=28, N=175, M=8, n=85", "target_text": "computeErrorProbability(R=0.3, SNR=28, N=175, M=8, n=85)"}
+{"input_text": "Write function call: Compute the error probability with n=96, M=8, R=0.4, N=187, SNR=19", "target_text": "computeErrorProbability(n=96, M=8, R=0.4, N=187, SNR=19)"}
+{"input_text": "Write function call: Kindly compute the error probability with n=26, N=171, M=16, R=0.1, SNR=24", "target_text": "computeErrorProbability(n=26, N=171, M=16, R=0.1, SNR=24)"}
+{"input_text": "Write function call: Kindly compute the error probability with SNR=30, R=0.6, n=96, M=2, N=111", "target_text": "computeErrorProbability(SNR=30, R=0.6, n=96, M=2, N=111)"}
+{"input_text": "Write function call: Kindly compute the error probability with n=85, SNR=4, R=0.5, M=4, N=158", "target_text": "computeErrorProbability(n=85, SNR=4, R=0.5, M=4, N=158)"}
+{"input_text": "Write function call: Compute the error probability with N=77, M=16, n=13, SNR=5, R=0.4", "target_text": "computeErrorProbability(N=77, M=16, n=13, SNR=5, R=0.4)"}
+{"input_text": "Write function call: Calculate the error probability with N=135, SNR=26, n=26, R=0.5, M=8", "target_text": "computeErrorProbability(N=135, SNR=26, n=26, R=0.5, M=8)"}
+{"input_text": "Write function call: Kindly compute the error probability with M=16, n=85, N=77, R=0.5, SNR=0", "target_text": "computeErrorProbability(M=16, n=85, N=77, R=0.5, SNR=0)"}
+{"input_text": "Write function call: Compute the error probability with M=2, R=0.1, SNR=22, N=170, n=14", "target_text": "computeErrorProbability(M=2, R=0.1, SNR=22, N=170, n=14)"}
+{"input_text": "Write function call: Calculate the error probability with n=42, R=0.2, M=4, SNR=1, N=77", "target_text": "computeErrorProbability(n=42, R=0.2, M=4, SNR=1, N=77)"}
+{"input_text": "Write function call: Please calculate the error probability with M=8, n=59, N=79, SNR=26, R=0.5", "target_text": "computeErrorProbability(M=8, n=59, N=79, SNR=26, R=0.5)"}
+{"input_text": "Write function call: Please compute the error probability with M=32, SNR=25, n=31, N=51, R=0.1", "target_text": "computeErrorProbability(M=32, SNR=25, n=31, N=51, R=0.1)"}
+{"input_text": "Write function call: Compute the error probability with N=101, M=2, SNR=2, R=0.9, n=100", "target_text": "computeErrorProbability(N=101, M=2, SNR=2, R=0.9, n=100)"}
+{"input_text": "Write function call: Please calculate the error probability with SNR=11, N=185, n=66, R=0.1, M=16", "target_text": "computeErrorProbability(SNR=11, N=185, n=66, R=0.1, M=16)"}
+{"input_text": "Write function call: Please calculate the error probability with SNR=26, M=32, N=79, n=70, R=0.2", "target_text": "computeErrorProbability(SNR=26, M=32, N=79, n=70, R=0.2)"}
+{"input_text": "Write function call: Compute the error probability with n=96, M=16, SNR=7, R=0.4, N=149", "target_text": "computeErrorProbability(n=96, M=16, SNR=7, R=0.4, N=149)"}
+{"input_text": "Write function call: Calculate the error probability with n=34, N=163, SNR=10, M=2, R=0.7", "target_text": "computeErrorProbability(n=34, N=163, SNR=10, M=2, R=0.7)"}
+{"input_text": "Write function call: Compute the error probability with R=0.2, M=8, n=74, SNR=14, N=102", "target_text": "computeErrorProbability(R=0.2, M=8, n=74, SNR=14, N=102)"}
+{"input_text": "Write function call: Please compute the error probability with R=0.4, M=4, N=147, n=75, SNR=26", "target_text": "computeErrorProbability(R=0.4, M=4, N=147, n=75, SNR=26)"}
+{"input_text": "Write function call: Calculate the error probability with n=91, N=106, SNR=8, M=4, R=0.4", "target_text": "computeErrorProbability(n=91, N=106, SNR=8, M=4, R=0.4)"}
+{"input_text": "Write function call: Calculate the error probability with M=16, N=123, R=0.8, n=93, SNR=6", "target_text": "computeErrorProbability(M=16, N=123, R=0.8, n=93, SNR=6)"}
+{"input_text": "Write function call: Kindly compute the error probability with R=0.3, N=171, n=24, SNR=5, M=16", "target_text": "computeErrorProbability(R=0.3, N=171, n=24, SNR=5, M=16)"}
+{"input_text": "Write function call: Calculate the error probability with M=8, n=96, SNR=29, R=0.7, N=152", "target_text": "computeErrorProbability(M=8, n=96, SNR=29, R=0.7, N=152)"}
+{"input_text": "Write function call: Please compute the error probability with n=29, M=32, N=57, R=0.6, SNR=21", "target_text": "computeErrorProbability(n=29, M=32, N=57, R=0.6, SNR=21)"}
+{"input_text": "Write function call: Compute the error probability with n=98, N=139, M=8, SNR=21, R=1.0", "target_text": "computeErrorProbability(n=98, N=139, M=8, SNR=21, R=1.0)"}
+{"input_text": "Write function call: Compute the error probability with SNR=3, N=89, R=0.4, n=41, M=16", "target_text": "computeErrorProbability(SNR=3, N=89, R=0.4, n=41, M=16)"}
+{"input_text": "Write function call: Compute the error probability with R=0.5, SNR=9, N=156, M=8, n=99", "target_text": "computeErrorProbability(R=0.5, SNR=9, N=156, M=8, n=99)"}
+{"input_text": "Write function call: Please compute the error probability with n=22, N=140, R=0.8, SNR=19, M=8", "target_text": "computeErrorProbability(n=22, N=140, R=0.8, SNR=19, M=8)"}
+{"input_text": "Write function call: Kindly compute the error probability with n=53, N=94, M=8, SNR=16, R=0.6", "target_text": "computeErrorProbability(n=53, N=94, M=8, SNR=16, R=0.6)"}
+{"input_text": "Write function call: Kindly compute the error probability with M=32, n=11, SNR=27, R=0.8, N=99", "target_text": "computeErrorProbability(M=32, n=11, SNR=27, R=0.8, N=99)"}
+{"input_text": "Write function call: Kindly compute the error probability with n=95, N=59, M=8, R=0.9, SNR=12", "target_text": "computeErrorProbability(n=95, N=59, M=8, R=0.9, SNR=12)"}
+{"input_text": "Write function call: Please compute the error probability with R=0.8, SNR=30, N=62, M=4, n=33", "target_text": "computeErrorProbability(R=0.8, SNR=30, N=62, M=4, n=33)"}
+{"input_text": "Write function call: Compute the error probability with N=166, R=0.8, n=20, SNR=27, M=2", "target_text": "computeErrorProbability(N=166, R=0.8, n=20, SNR=27, M=2)"}
+{"input_text": "Write function call: Compute the error probability with SNR=5, M=8, n=90, N=146, R=1.0", "target_text": "computeErrorProbability(SNR=5, M=8, n=90, N=146, R=1.0)"}
+{"input_text": "Write function call: Compute the error probability with SNR=4, n=13, M=8, R=0.9, N=141", "target_text": "computeErrorProbability(SNR=4, n=13, M=8, R=0.9, N=141)"}
+{"input_text": "Write function call: Please calculate the error probability with M=2, n=86, N=57, R=0.3, SNR=14", "target_text": "computeErrorProbability(M=2, n=86, N=57, R=0.3, SNR=14)"}
+{"input_text": "Write function call: Please compute the error probability with n=66, N=82, R=0.9, M=4, SNR=27", "target_text": "computeErrorProbability(n=66, N=82, R=0.9, M=4, SNR=27)"}
+{"input_text": "Write function call: Compute the error probability with R=0.3, SNR=30, n=70, M=32, N=155", "target_text": "computeErrorProbability(R=0.3, SNR=30, n=70, M=32, N=155)"}
+{"input_text": "Write function call: Please compute the error probability with SNR=9, n=18, M=16, N=96, R=0.3", "target_text": "computeErrorProbability(SNR=9, n=18, M=16, N=96, R=0.3)"}
+{"input_text": "Write function call: Kindly compute the error probability with R=0.3, M=32, SNR=15, n=62, N=82", "target_text": "computeErrorProbability(R=0.3, M=32, SNR=15, n=62, N=82)"}
+{"input_text": "Write function call: Please calculate the error probability with n=63, R=1.0, M=2, SNR=20, N=147", "target_text": "computeErrorProbability(n=63, R=1.0, M=2, SNR=20, N=147)"}
+{"input_text": "Write function call: Compute the error probability with M=4, SNR=14, R=0.1, n=64, N=192", "target_text": "computeErrorProbability(M=4, SNR=14, R=0.1, n=64, N=192)"}
+{"input_text": "Write function call: Please calculate the error probability with R=0.6, n=19, N=189, M=2, SNR=13", "target_text": "computeErrorProbability(R=0.6, n=19, N=189, M=2, SNR=13)"}
+{"input_text": "Write function call: Compute the error probability with R=0.4, n=48, N=154, M=16, SNR=4", "target_text": "computeErrorProbability(R=0.4, n=48, N=154, M=16, SNR=4)"}
+{"input_text": "Write function call: Calculate the error probability with N=157, M=2, SNR=30, R=0.8, n=84", "target_text": "computeErrorProbability(N=157, M=2, SNR=30, R=0.8, n=84)"}
+{"input_text": "Write function call: Compute the error probability with N=54, R=0.4, SNR=19, M=16, n=43", "target_text": "computeErrorProbability(N=54, R=0.4, SNR=19, M=16, n=43)"}
+{"input_text": "Write function call: Compute the error probability with R=0.1, n=96, N=109, SNR=18, M=8", "target_text": "computeErrorProbability(R=0.1, n=96, N=109, SNR=18, M=8)"}
+{"input_text": "Write function call: Please calculate the error probability with N=168, SNR=3, M=4, R=0.2, n=38", "target_text": "computeErrorProbability(N=168, SNR=3, M=4, R=0.2, n=38)"}
+{"input_text": "Write function call: Compute the error probability with N=67, M=2, R=0.4, SNR=17, n=95", "target_text": "computeErrorProbability(N=67, M=2, R=0.4, SNR=17, n=95)"}
+{"input_text": "Write function call: Please compute the error probability with n=93, SNR=1, N=73, M=2, R=0.1", "target_text": "computeErrorProbability(n=93, SNR=1, N=73, M=2, R=0.1)"}
+{"input_text": "Write function call: Compute the error probability with SNR=21, R=0.7, n=11, N=88, M=4", "target_text": "computeErrorProbability(SNR=21, R=0.7, n=11, N=88, M=4)"}
+{"input_text": "Write function call: Please calculate the error probability with M=2, SNR=22, R=0.1, n=43, N=71", "target_text": "computeErrorProbability(M=2, SNR=22, R=0.1, n=43, N=71)"}
+{"input_text": "Write function call: Compute the error probability with SNR=17, n=42, N=124, R=0.8, M=8", "target_text": "computeErrorProbability(SNR=17, n=42, N=124, R=0.8, M=8)"}
+{"input_text": "Write function call: Compute the error probability with N=118, M=4, R=1.0, SNR=21, n=11", "target_text": "computeErrorProbability(N=118, M=4, R=1.0, SNR=21, n=11)"}
+{"input_text": "Write function call: Kindly compute the error probability with n=51, R=0.6, M=32, SNR=29, N=122", "target_text": "computeErrorProbability(n=51, R=0.6, M=32, SNR=29, N=122)"}
+{"input_text": "Write function call: Calculate the error exponent with M=8, SNR=1, N=67, R=0.2", "target_text": "computeErrorExponent(M=8, SNR=1, N=67, R=0.2)"}
+{"input_text": "Write function call: Please compute the error exponent with M=8, SNR=23, R=0.8, N=104", "target_text": "computeErrorExponent(M=8, SNR=23, R=0.8, N=104)"}
+{"input_text": "Write function call: Kindly compute the error exponent with SNR=10, R=0.9, N=81, M=4", "target_text": "computeErrorExponent(SNR=10, R=0.9, N=81, M=4)"}
+{"input_text": "Write function call: Please calculate the error exponent with R=0.7, N=66, SNR=15, M=4", "target_text": "computeErrorExponent(R=0.7, N=66, SNR=15, M=4)"}
+{"input_text": "Write function call: Calculate the error exponent with SNR=11, R=0.7, M=8, N=155", "target_text": "computeErrorExponent(SNR=11, R=0.7, M=8, N=155)"}
+{"input_text": "Write function call: Compute the error exponent with M=32, N=197, SNR=2, R=0.3", "target_text": "computeErrorExponent(M=32, N=197, SNR=2, R=0.3)"}
+{"input_text": "Write function call: Compute the error exponent with SNR=9, R=0.2, M=16, N=89", "target_text": "computeErrorExponent(SNR=9, R=0.2, M=16, N=89)"}
+{"input_text": "Write function call: Calculate the error exponent with N=55, M=8, SNR=2, R=0.9", "target_text": "computeErrorExponent(N=55, M=8, SNR=2, R=0.9)"}
+{"input_text": "Write function call: Calculate the error exponent with SNR=5, M=16, N=108, R=0.7", "target_text": "computeErrorExponent(SNR=5, M=16, N=108, R=0.7)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.8, N=89, M=8, SNR=8", "target_text": "computeErrorExponent(R=0.8, N=89, M=8, SNR=8)"}
+{"input_text": "Write function call: Kindly compute the error exponent with M=4, N=184, SNR=3, R=0.6", "target_text": "computeErrorExponent(M=4, N=184, SNR=3, R=0.6)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.7, M=16, SNR=8, N=156", "target_text": "computeErrorExponent(R=0.7, M=16, SNR=8, N=156)"}
+{"input_text": "Write function call: Please compute the error exponent with N=143, M=2, R=0.5, SNR=7", "target_text": "computeErrorExponent(N=143, M=2, R=0.5, SNR=7)"}
+{"input_text": "Write function call: Kindly compute the error exponent with M=8, SNR=3, N=91, R=0.5", "target_text": "computeErrorExponent(M=8, SNR=3, N=91, R=0.5)"}
+{"input_text": "Write function call: Kindly compute the error exponent with N=111, SNR=21, M=16, R=0.3", "target_text": "computeErrorExponent(N=111, SNR=21, M=16, R=0.3)"}
+{"input_text": "Write function call: Kindly compute the error exponent with M=16, N=71, R=1.0, SNR=29", "target_text": "computeErrorExponent(M=16, N=71, R=1.0, SNR=29)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.9, N=68, M=32, SNR=21", "target_text": "computeErrorExponent(R=0.9, N=68, M=32, SNR=21)"}
+{"input_text": "Write function call: Please calculate the error exponent with R=0.5, M=16, SNR=13, N=81", "target_text": "computeErrorExponent(R=0.5, M=16, SNR=13, N=81)"}
+{"input_text": "Write function call: Calculate the error exponent with R=0.2, M=8, N=135, SNR=3", "target_text": "computeErrorExponent(R=0.2, M=8, N=135, SNR=3)"}
+{"input_text": "Write function call: Compute the error exponent with SNR=1, R=0.2, N=166, M=16", "target_text": "computeErrorExponent(SNR=1, R=0.2, N=166, M=16)"}
+{"input_text": "Write function call: Compute the error exponent with N=179, R=0.1, SNR=9, M=8", "target_text": "computeErrorExponent(N=179, R=0.1, SNR=9, M=8)"}
+{"input_text": "Write function call: Please compute the error exponent with N=156, M=8, SNR=25, R=0.1", "target_text": "computeErrorExponent(N=156, M=8, SNR=25, R=0.1)"}
+{"input_text": "Write function call: Kindly compute the error exponent with M=16, SNR=27, R=0.4, N=157", "target_text": "computeErrorExponent(M=16, SNR=27, R=0.4, N=157)"}
+{"input_text": "Write function call: Kindly compute the error exponent with M=2, SNR=24, N=138, R=0.4", "target_text": "computeErrorExponent(M=2, SNR=24, N=138, R=0.4)"}
+{"input_text": "Write function call: Compute the error exponent with N=67, SNR=26, R=0.9, M=8", "target_text": "computeErrorExponent(N=67, SNR=26, R=0.9, M=8)"}
+{"input_text": "Write function call: Kindly compute the error exponent with R=0.7, SNR=20, N=84, M=16", "target_text": "computeErrorExponent(R=0.7, SNR=20, N=84, M=16)"}
+{"input_text": "Write function call: Please compute the error exponent with R=0.1, N=188, M=16, SNR=7", "target_text": "computeErrorExponent(R=0.1, N=188, M=16, SNR=7)"}
+{"input_text": "Write function call: Please calculate the error exponent with N=89, M=4, R=0.4, SNR=13", "target_text": "computeErrorExponent(N=89, M=4, R=0.4, SNR=13)"}
+{"input_text": "Write function call: Compute the error exponent with M=8, R=0.9, SNR=30, N=154", "target_text": "computeErrorExponent(M=8, R=0.9, SNR=30, N=154)"}
+{"input_text": "Write function call: Please calculate the error exponent with N=54, M=4, SNR=30, R=0.5", "target_text": "computeErrorExponent(N=54, M=4, SNR=30, R=0.5)"}
+{"input_text": "Write function call: Kindly compute the error exponent with R=0.7, N=120, M=8, SNR=0", "target_text": "computeErrorExponent(R=0.7, N=120, M=8, SNR=0)"}
+{"input_text": "Write function call: Please compute the error exponent with SNR=29, R=0.8, N=92, M=16", "target_text": "computeErrorExponent(SNR=29, R=0.8, N=92, M=16)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.2, N=123, M=8, SNR=21", "target_text": "computeErrorExponent(R=0.2, N=123, M=8, SNR=21)"}
+{"input_text": "Write function call: Please calculate the error exponent with R=0.2, M=4, N=148, SNR=5", "target_text": "computeErrorExponent(R=0.2, M=4, N=148, SNR=5)"}
+{"input_text": "Write function call: Compute the error exponent with SNR=6, R=0.2, M=16, N=66", "target_text": "computeErrorExponent(SNR=6, R=0.2, M=16, N=66)"}
+{"input_text": "Write function call: Kindly compute the error exponent with R=0.2, N=181, SNR=23, M=16", "target_text": "computeErrorExponent(R=0.2, N=181, SNR=23, M=16)"}
+{"input_text": "Write function call: Compute the error exponent with N=144, M=4, SNR=16, R=0.5", "target_text": "computeErrorExponent(N=144, M=4, SNR=16, R=0.5)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.8, M=2, N=54, SNR=28", "target_text": "computeErrorExponent(R=0.8, M=2, N=54, SNR=28)"}
+{"input_text": "Write function call: Compute the error exponent with N=120, R=0.6, M=4, SNR=17", "target_text": "computeErrorExponent(N=120, R=0.6, M=4, SNR=17)"}
+{"input_text": "Write function call: Please compute the error exponent with M=4, SNR=12, R=0.4, N=131", "target_text": "computeErrorExponent(M=4, SNR=12, R=0.4, N=131)"}
+{"input_text": "Write function call: Compute the error exponent with N=162, M=2, SNR=13, R=0.4", "target_text": "computeErrorExponent(N=162, M=2, SNR=13, R=0.4)"}
+{"input_text": "Write function call: Calculate the error exponent with N=98, R=0.9, SNR=27, M=4", "target_text": "computeErrorExponent(N=98, R=0.9, SNR=27, M=4)"}
+{"input_text": "Write function call: Compute the error exponent with SNR=20, N=169, R=0.7, M=8", "target_text": "computeErrorExponent(SNR=20, N=169, R=0.7, M=8)"}
+{"input_text": "Write function call: Compute the error exponent with N=65, R=0.7, SNR=1, M=32", "target_text": "computeErrorExponent(N=65, R=0.7, SNR=1, M=32)"}
+{"input_text": "Write function call: Compute the error exponent with SNR=30, M=4, R=0.9, N=104", "target_text": "computeErrorExponent(SNR=30, M=4, R=0.9, N=104)"}
+{"input_text": "Write function call: Please calculate the error exponent with N=150, SNR=11, M=32, R=0.5", "target_text": "computeErrorExponent(N=150, SNR=11, M=32, R=0.5)"}
+{"input_text": "Write function call: Kindly compute the error exponent with M=32, N=108, SNR=14, R=0.9", "target_text": "computeErrorExponent(M=32, N=108, SNR=14, R=0.9)"}
+{"input_text": "Write function call: Please compute the error exponent with M=32, SNR=9, N=175, R=0.1", "target_text": "computeErrorExponent(M=32, SNR=9, N=175, R=0.1)"}
+{"input_text": "Write function call: Please calculate the error exponent with R=0.3, M=16, SNR=17, N=84", "target_text": "computeErrorExponent(R=0.3, M=16, SNR=17, N=84)"}
+{"input_text": "Write function call: Please compute the error exponent with SNR=6, R=0.7, M=2, N=95", "target_text": "computeErrorExponent(SNR=6, R=0.7, M=2, N=95)"}
+{"input_text": "Write function call: Please compute the error exponent with SNR=8, M=2, R=0.8, N=199", "target_text": "computeErrorExponent(SNR=8, M=2, R=0.8, N=199)"}
+{"input_text": "Write function call: Please calculate the error exponent with M=8, R=0.9, N=118, SNR=19", "target_text": "computeErrorExponent(M=8, R=0.9, N=118, SNR=19)"}
+{"input_text": "Write function call: Calculate the error exponent with M=32, SNR=13, N=61, R=0.2", "target_text": "computeErrorExponent(M=32, SNR=13, N=61, R=0.2)"}
+{"input_text": "Write function call: Kindly compute the error exponent with M=4, R=0.7, SNR=16, N=99", "target_text": "computeErrorExponent(M=4, R=0.7, SNR=16, N=99)"}
+{"input_text": "Write function call: Please compute the error exponent with M=2, R=0.8, SNR=21, N=182", "target_text": "computeErrorExponent(M=2, R=0.8, SNR=21, N=182)"}
+{"input_text": "Write function call: Please compute the error exponent with M=32, SNR=0, R=1.0, N=168", "target_text": "computeErrorExponent(M=32, SNR=0, R=1.0, N=168)"}
+{"input_text": "Write function call: Compute the error exponent with SNR=24, R=0.5, N=153, M=2", "target_text": "computeErrorExponent(SNR=24, R=0.5, N=153, M=2)"}
+{"input_text": "Write function call: Calculate the error exponent with SNR=13, R=0.9, M=32, N=165", "target_text": "computeErrorExponent(SNR=13, R=0.9, M=32, N=165)"}
+{"input_text": "Write function call: Calculate the error exponent with N=88, R=0.6, M=8, SNR=30", "target_text": "computeErrorExponent(N=88, R=0.6, M=8, SNR=30)"}
+{"input_text": "Write function call: Compute the error exponent with M=4, SNR=3, R=0.5, N=183", "target_text": "computeErrorExponent(M=4, SNR=3, R=0.5, N=183)"}
+{"input_text": "Write function call: Calculate the error exponent with SNR=2, M=32, R=0.2, N=164", "target_text": "computeErrorExponent(SNR=2, M=32, R=0.2, N=164)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.2, M=32, SNR=21, N=54", "target_text": "computeErrorExponent(R=0.2, M=32, SNR=21, N=54)"}
+{"input_text": "Write function call: Calculate the error exponent with M=32, N=94, R=0.2, SNR=25", "target_text": "computeErrorExponent(M=32, N=94, R=0.2, SNR=25)"}
+{"input_text": "Write function call: Please calculate the error exponent with SNR=8, N=133, M=8, R=0.8", "target_text": "computeErrorExponent(SNR=8, N=133, M=8, R=0.8)"}
+{"input_text": "Write function call: Please calculate the error exponent with R=0.3, N=108, M=2, SNR=3", "target_text": "computeErrorExponent(R=0.3, N=108, M=2, SNR=3)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.6, M=4, SNR=8, N=117", "target_text": "computeErrorExponent(R=0.6, M=4, SNR=8, N=117)"}
+{"input_text": "Write function call: Kindly compute the error exponent with R=0.7, N=160, M=16, SNR=13", "target_text": "computeErrorExponent(R=0.7, N=160, M=16, SNR=13)"}
+{"input_text": "Write function call: Calculate the error exponent with SNR=4, N=71, M=32, R=0.2", "target_text": "computeErrorExponent(SNR=4, N=71, M=32, R=0.2)"}
+{"input_text": "Write function call: Please compute the error exponent with R=0.7, N=133, M=4, SNR=13", "target_text": "computeErrorExponent(R=0.7, N=133, M=4, SNR=13)"}
+{"input_text": "Write function call: Please compute the error exponent with SNR=30, M=2, N=140, R=0.7", "target_text": "computeErrorExponent(SNR=30, M=2, N=140, R=0.7)"}
+{"input_text": "Write function call: Kindly compute the error exponent with R=0.4, N=78, M=32, SNR=9", "target_text": "computeErrorExponent(R=0.4, N=78, M=32, SNR=9)"}
+{"input_text": "Write function call: Please calculate the error exponent with SNR=11, R=0.3, N=118, M=16", "target_text": "computeErrorExponent(SNR=11, R=0.3, N=118, M=16)"}
+{"input_text": "Write function call: Calculate the error exponent with R=0.5, M=2, SNR=22, N=113", "target_text": "computeErrorExponent(R=0.5, M=2, SNR=22, N=113)"}
+{"input_text": "Write function call: Please calculate the error exponent with SNR=0, N=50, M=2, R=1.0", "target_text": "computeErrorExponent(SNR=0, N=50, M=2, R=1.0)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.7, M=32, N=81, SNR=7", "target_text": "computeErrorExponent(R=0.7, M=32, N=81, SNR=7)"}
+{"input_text": "Write function call: Compute the error exponent with M=8, SNR=17, N=98, R=0.6", "target_text": "computeErrorExponent(M=8, SNR=17, N=98, R=0.6)"}
+{"input_text": "Write function call: Please calculate the error exponent with SNR=14, N=162, R=0.2, M=2", "target_text": "computeErrorExponent(SNR=14, N=162, R=0.2, M=2)"}
+{"input_text": "Write function call: Please compute the error exponent with N=64, M=16, SNR=16, R=0.2", "target_text": "computeErrorExponent(N=64, M=16, SNR=16, R=0.2)"}
+{"input_text": "Write function call: Calculate the error exponent with SNR=20, N=82, R=0.5, M=8", "target_text": "computeErrorExponent(SNR=20, N=82, R=0.5, M=8)"}
+{"input_text": "Write function call: Kindly compute the error exponent with M=32, N=74, R=0.4, SNR=6", "target_text": "computeErrorExponent(M=32, N=74, R=0.4, SNR=6)"}
+{"input_text": "Write function call: Calculate the error exponent with SNR=7, M=4, R=0.6, N=175", "target_text": "computeErrorExponent(SNR=7, M=4, R=0.6, N=175)"}
+{"input_text": "Write function call: Please calculate the error exponent with R=0.4, N=112, SNR=22, M=16", "target_text": "computeErrorExponent(R=0.4, N=112, SNR=22, M=16)"}
+{"input_text": "Write function call: Kindly compute the error exponent with N=97, R=0.5, M=8, SNR=25", "target_text": "computeErrorExponent(N=97, R=0.5, M=8, SNR=25)"}
+{"input_text": "Write function call: Please compute the error exponent with R=0.6, M=2, SNR=16, N=140", "target_text": "computeErrorExponent(R=0.6, M=2, SNR=16, N=140)"}
+{"input_text": "Write function call: Please compute the error exponent with M=8, SNR=26, N=115, R=1.0", "target_text": "computeErrorExponent(M=8, SNR=26, N=115, R=1.0)"}
+{"input_text": "Write function call: Compute the error exponent with N=87, R=0.8, SNR=28, M=8", "target_text": "computeErrorExponent(N=87, R=0.8, SNR=28, M=8)"}
+{"input_text": "Write function call: Compute the error exponent with M=4, N=103, SNR=8, R=0.6", "target_text": "computeErrorExponent(M=4, N=103, SNR=8, R=0.6)"}
+{"input_text": "Write function call: Please compute the error exponent with N=66, SNR=4, R=1.0, M=16", "target_text": "computeErrorExponent(N=66, SNR=4, R=1.0, M=16)"}
+{"input_text": "Write function call: Kindly compute the error exponent with SNR=10, R=0.6, M=16, N=63", "target_text": "computeErrorExponent(SNR=10, R=0.6, M=16, N=63)"}
+{"input_text": "Write function call: Calculate the error exponent with SNR=5, N=163, M=32, R=0.6", "target_text": "computeErrorExponent(SNR=5, N=163, M=32, R=0.6)"}
+{"input_text": "Write function call: Please calculate the error exponent with M=8, SNR=20, R=0.5, N=138", "target_text": "computeErrorExponent(M=8, SNR=20, R=0.5, N=138)"}
+{"input_text": "Write function call: Please compute the error exponent with M=8, SNR=1, R=0.3, N=60", "target_text": "computeErrorExponent(M=8, SNR=1, R=0.3, N=60)"}
+{"input_text": "Write function call: Compute the error exponent with SNR=25, N=63, R=0.6, M=2", "target_text": "computeErrorExponent(SNR=25, N=63, R=0.6, M=2)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.1, N=141, SNR=10, M=8", "target_text": "computeErrorExponent(R=0.1, N=141, SNR=10, M=8)"}
+{"input_text": "Write function call: Please calculate the error exponent with SNR=30, M=8, N=135, R=0.8", "target_text": "computeErrorExponent(SNR=30, M=8, N=135, R=0.8)"}
+{"input_text": "Write function call: Please compute the error exponent with M=16, N=60, R=0.4, SNR=20", "target_text": "computeErrorExponent(M=16, N=60, R=0.4, SNR=20)"}
+{"input_text": "Write function call: Calculate the error exponent with M=16, SNR=30, N=71, R=0.9", "target_text": "computeErrorExponent(M=16, SNR=30, N=71, R=0.9)"}
+{"input_text": "Write function call: Compute the error exponent with R=0.9, SNR=9, N=73, M=8", "target_text": "computeErrorExponent(R=0.9, SNR=9, N=73, M=8)"}
+{"input_text": "Write function call: Compute the error exponent with N=59, SNR=16, R=0.8, M=4", "target_text": "computeErrorExponent(N=59, SNR=16, R=0.8, M=4)"}
+{"input_text": "Write function call: Kindly compute the error exponent with R=1.0, SNR=8, N=179, M=8", "target_text": "computeErrorExponent(R=1.0, SNR=8, N=179, M=8)"}

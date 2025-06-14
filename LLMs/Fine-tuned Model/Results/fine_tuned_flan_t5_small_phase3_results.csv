@@ -1,0 +1,51 @@
+prompt;output;latency_s;words_per_s
+Calculate the error probability for BPSK at SNR 7 and rate 0.8.;### Instruction: Calculate the error probability for BPSK at SNR 7 and rate 0.8.;2.592;5.4
+Find the error exponent if I use 8-PSK modulation with SNR 9, rate 0.5, and 5 quadrature nodes.;### Technical assistant for digital transmission systems. You are a technical assistant for digital transmission systems . For function calls, output the function name and parameters . For explanations, type##, type##, type##, type##, type##, type##, type##, type##, type##, type##, type##, type##, type##, type##, type##, type##, type##, type## .;23.725;2.0
+Plot the error probability versus SNR for 16-QAM, with M=16, N=1000, rate 0.6, and SNR from 0 to 15.;### Technical assistant for digital transmission systems.;6.601;1.1
+What is modulation in digital communications?;### Instruction: What is modulation in digital communications?;0.845;9.5
+Compute the error exponent for QPSK when the rate is 0.9.;### Instruction: Compute the error exponent for QPSK when the rate is 0.9.;0.874;14.9
+What does increasing block length N do to the probability of error?;### Instruction: What does increasing block length N do to the probability of error?;0.802;17.5
+Show me the error probability curve for BPSK with M=2, N=500, over SNRs from 0 to 12.;### Instruction: Show me the error probability curve for BPSK, M=2, N=500, SNR=unknown, Rate=unknown);1.107;12.6
+How do I compute the error probability for 4-QAM at SNR 5, rate 0.7, N=200?;### Instruction: How do I compute the error probability for 4-QAM, x=SNR, min=unknown, max=unknown, x=unknown, min=unknown, max=unknown, x=unknown, min=unknown, max=unknown);1.778;11.2
+What's the difference between error exponent and error probability?;### Instruction: What's the difference between error exponent and error probability?;0.474;23.2
+If my system uses QPSK, SNR 10, and rate 0.6, what's the error exponent?;typeExponent(M=unknown, N=unknown, SNR 10, Rate 0.6);1.101;5.5
+Calculate error probability for 8-QAM at rate 0.5, using 7 quadrature nodes and N=300.;### Instruction: Calculate error probability for 8-QAM, using 7 quadrature nodes and N=300, SNR=unknown, Rate=0.5);1.009;14.9
+Explain what SNR means in digital communication.;### Instruction: Explain what SNR means in digital communication .;6.467;1.5
+For BPSK, rate 0.8, N=400, and SNR 12, what's the error probability?;### Instruction: For BPSK, rate 0.8, x=SNR, min=2, max=12, x=N=400, min=unknown, max=12, x=N=400, M=unknown, N=400, SNR=12, Rate=0.8);1.876;9.1
+Show a plot of error exponent vs rate for 16-QAM, M=16, N=100, over rates 0.2 to 1.0.;### Instruction: Show a plot of error exponent vs. rate for 16-QAM, M=16, N=100, SNR=10, Rate=0.2);1.228;13.0
+What's the purpose of using quadrature nodes in simulations?;### Instruction: What's the purpose of using quadrature nodes in simulations?;0.775;14.2
+What's the error probability for QPSK if SNR is unknown but rate is 0.7 and N=150?;### Instruction: What's the error probability for QPSK if SNR is unknown but is not known?;0.629;25.4
+Compute error exponent for 32-QAM at SNR 11, rate 0.65, using 9 quadrature nodes.;### Instruction: Use 9 quadrature nodes, x=SNR, min., max. 65, x=SNR, min., max.;0.848;15.3
+How likely is an error with BPSK at SNR 3 and rate 0.5?;### Instruction: How likely is an error with BPSK at SNR 3 and rates 0.5?;0.52;28.9
+Plot error probability for 8-PSK, SNR 0 to 15, M=8, N=200.;### Technical assistant for digital transmission systems.;6.103;1.1
+"What does ""rate"" mean in channel coding?";"### Instruction: What does ""rate"" mean in channel coding?";0.912;9.9
+What's the error exponent for 4-QAM if the SNR is 8 and the rate is unknown?;### Instruction: What's the error exponent for 4-QAM if the SNR is 8 and the rate is unknown?;1.303;13.8
+Find the error probability for 64-QAM, SNR 13, rate 0.75, quadrature nodes 11, N=800.;### Technical assistant for digital transmission systems.;5.943;1.2
+Why is QPSK preferred over BPSK sometimes?;### Instruction: Why is QPSK preferred over BPSK sometimes?;0.948;9.5
+Can you plot error exponent versus SNR for BPSK with M=2, N=300, SNR from 0 to 10?;### Instruction: Can you plot error exponent versus SNR, M=2, N=300, SNR=10, Rate=0.5);1.009;12.9
+Compute error probability for QPSK with N=500.;### Instruction: Compute error probability for QPSK with N=500, SNR=unknown, Rate=unknown);0.777;14.2
+What's the effect of increasing SNR on error probability?;### Instruction: What's the effect of increasing SNR on error probability?;0.43;25.6
+Find error exponent for 8-PSK, SNR unknown, rate 0.85.;### Instruction: Find error exponent for 8-PSK, SNR unknown, Rate 0.85.;0.932;11.8
+"What does ""N"" represent in these calculations?";"### Instruction: What does ""N"" represent in these calculations?";0.562;16.0
+Calculate the error probability for 16-QAM at SNR 6, rate unknown, using N=1200.;### Instruction: Calculate the error probability for 16-QAM, x=SNR, min=unknown, max=unknown, typename, typename, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, typeName, type;2.485;15.7
+Plot error probability vs SNR for QPSK, M=4, N=400, from SNR 0 to 20.;### Technical assistant for digital transmission systems.;6.336;1.1
+Compute the error exponent for BPSK, rate 0.6, quadrature nodes 4.;typeDownExponent(M=unknown, N=unknown, SNR=unknown, Rate 0.6);1.469;3.4
+"What is ""8-QAM"" and when is it used?";"### Instruction: What is ""8-QAM"" and when is it used?";1.033;9.7
+How to find error probability for BPSK, rate 1.0, with 10 quadrature nodes?;### Instruction: How to find error probability for BPSK, at 1.0, with 10 quadrature nodes?;1.014;14.8
+What's the error probability of 4-QAM at SNR 9 and N=100?;### Instruction: What's the error probability of 4-QAM at SNR 9 and N=100?;0.95;13.7
+How does modulation order M affect performance?;### Instruction: How does modulation order M affect performance?;0.333;27.0
+Compute error exponent for 64-QAM, rate 0.9, using 12 quadrature nodes.;### Instruction: Compute error exponent for 64-QAM, M=unknown, N=unknown, SNR=unknown, Rate 0.9);0.779;15.4
+Plot error exponent for 8-QAM, M=8, N=250, over SNR 0–18.;### Technical assistant for digital transmission systems.;6.238;1.1
+"What is the meaning of ""quadrature nodes"" here?";"### Instruction: What is the meaning of ""quadrature nodes"" here?";0.621;16.1
+Calculate error probability for 32-QAM, rate 0.4, with N=50 and SNR 5.;### Instruction: Calculate error probability for 32-QAM, x=N, min=unknown, max=50, points=not known, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename, typename;2.696;14.5
+For BPSK, how does SNR 2 compare to SNR 10 in error probability?;### Instruction: For BPSK, how does SNR 2 compare to SNR 10 in error probability?;0.56;26.8
+Find the error exponent for QPSK with rate 0.85 and 6 quadrature nodes.;### Instruction: Find the error exponent for QPSK with rate 0.85 and 6 quadrature nodes.;0.915;16.4
+What's the error probability for 64-QAM with SNR 12 and rate 0.9?;### Instruction: What's the error probability for 64-QAM with SNR 12 and Rate: 0.9);0.886;15.8
+Why use higher-order QAM?;### Instruction: Why use higher-order QAM?;0.369;16.3
+Plot error probability vs SNR for 32-QAM, M=32, N=2000, SNR from 5 to 20.;### Technical assistant for digital transmission systems.;6.077;1.2
+Give me the error exponent for 16-QAM, SNR 7, rate unknown, quadrature nodes 8.;### Instruction: Give me the error exponent for 16-QAM, SNR 7, Rate unknown, typeUnknown);1.111;12.6
+What factors affect the error probability in digital transmission?;### Instruction: What factors affect the error probability in digital transmission?;0.414;26.6
+Calculate error probability for 8-PSK at SNR 15 and rate 0.7.;### Instruction: Calculate error probability for 8-PSK at SNR 15 and rate 0.7.;0.514;25.3
+"What does ""error exponent"" tell us in practice?";"### Instruction: What does ""errorExponent"" tell us in practice?";0.394;22.8
+Compute error exponent for BPSK, SNR 8, rate 0.75, 5 quadrature nodes.;### Instruction: Compute error exponent for BPSK, SNR 8, Rate 0.75, Rate 0.75);0.69;18.8
+What's the error probability for QPSK at SNR 4, rate 0.6, and N=50?;### Instruction: What's the error probability for QPSK, at SNR 4, Rate 0.6);0.952;13.7
